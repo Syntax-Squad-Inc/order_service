@@ -1,4 +1,4 @@
-package com.order_service.config;
+package com.order_service.Config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,7 +1,6 @@
-package com.order_service.service;
+package com.order_service.Service;
 
-import com.order_service.model.Order;
-
+import com.order_service.Model.Order;
 import java.util.List;
 
 public interface OrderService {

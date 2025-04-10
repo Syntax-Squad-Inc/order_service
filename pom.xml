@@ -13,7 +13,7 @@
     <name>Order Service</name>
     <description>Spring Boot microservice for managing orders</description>
 
-    <!-- ✅ Add Spring Boot parent -->
+    <!--  Add Spring Boot parent -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

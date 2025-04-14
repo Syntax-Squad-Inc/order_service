@@ -8,7 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter 
+{
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -18,4 +19,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers("/orders/**").authenticated()
             .anyRequest().permitAll();
     }
+    
+    @Autowired
+private JwtRequestFilter jwtRequestFilter;
+
+@Override
+protected void configure(HttpSecurity http) throws Exception 
+{
+    http.csrf().disable()
+        .authorizeRequests()
+        .antMatchers("/authenticate").permitAll()
+        .antMatchers("/orders/**").authenticated()
+        .anyRequest().permitAll();
+
+    http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class); // 👈 Register your filter
+}
+
 }

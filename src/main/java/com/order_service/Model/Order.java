@@ -1,6 +1,6 @@
-package com.order_service.model;
+package com.order_service.Model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data

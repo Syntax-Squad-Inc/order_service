@@ -1,8 +1,8 @@
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\Config\AppConfig.java
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\Controller\OrderController.java
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\Model\Order.java
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\OrderApplication.java
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\Repository\OrderRepository.java
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\Security\SecurityConfig.java
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\Service\OrderService.java
-C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\Service\OrderServiceImpl.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\OrderApplication.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\Service\OrderServiceImpl.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\Config\AppConfig.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\Model\Order.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\Controller\OrderController.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\Repository\OrderRepository.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\Security\SecurityConfig.java
+C:\Users\SLMakomazi\Desktop\Projects\order_service\src\main\java\com\order_service\Service\OrderService.java

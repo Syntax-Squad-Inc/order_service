@@ -11,6 +11,7 @@ public class OrderMapper {
                 order.getProductName(),
                 order.getPrice(),
                 order.getStatus(),
+                order.getOrderNumber(),
                 order.getCreatedAt(),
                 order.getUpdatedAt()
         );
@@ -23,6 +24,7 @@ public class OrderMapper {
                 orderDto.getProductName(),
                 orderDto.getPrice(),
                 orderDto.getStatus(),
+                orderDto.getOrderNumber(),
                 orderDto.getCreatedAt(),
                 orderDto.getUpdatedAt()
         );

@@ -19,6 +19,7 @@ public class OrderDto {
     private String productName;
     private BigDecimal price;
     private String status;
+    private Long orderNumber;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

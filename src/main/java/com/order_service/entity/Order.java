@@ -31,6 +31,9 @@ public class Order {
     @Column(name = "status")
     private String status;
 
+    @Column(name = "order_number", updatable = false, insertable = false)
+    private Long orderNumber; // Uses sequence in database (Postgresql handles this)
+
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
 

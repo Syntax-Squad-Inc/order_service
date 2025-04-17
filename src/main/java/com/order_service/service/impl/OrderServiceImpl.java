@@ -1,5 +1,6 @@
 package com.order_service.service.impl;
 
+import org.springframework.transaction.annotation.Transactional;
 import com.order_service.dto.OrderDto;
 import com.order_service.entity.Order;
 import com.order_service.exception.ResourceNotFoundException;
@@ -17,10 +18,16 @@ import java.util.stream.Collectors;
 public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
     @Override
+    @Transactional
     public OrderDto createOrder(OrderDto orderDto) {
 
         Order order = OrderMapper.mapToOrder(orderDto);
         Order savedOrder = orderRepository.save(order);
+
+        // Force refresh to get orderNumber from DB
+        orderRepository.flush(); // Flush first to persist
+        orderRepository.refresh(savedOrder); // Then refresh the entity to load generated values
+
         return OrderMapper.mapToOrderDto(savedOrder);
     }
 

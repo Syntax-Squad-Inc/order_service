@@ -3,15 +3,14 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/order_service
-    username: order_user
-    password: your_password
+    url: jdbc:postgresql://postgres:5432/orders_db
+    username: admin
+    password: syntax
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
-  profiles:
-    active: dev  # Activate the 'dev' profile
 
 logging:
   level:

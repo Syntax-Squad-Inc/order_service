@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/orders")
+@CrossOrigin
 public class OrderController {
     private OrderService orderService;
 

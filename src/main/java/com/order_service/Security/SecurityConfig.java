@@ -1,20 +1,38 @@
-package com.order_service.Security;
+package com.order_service.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-public class SecurityConfig {
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter 
+{
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth
-                .anyRequest().permitAll()
-            );
-        return http.build();
+            .csrf().disable()
+            .authorizeRequests()
+            .antMatchers("/orders/**").authenticated()
+            .anyRequest().permitAll();
     }
+    
+    @Autowired
+private JwtRequestFilter jwtRequestFilter;
+
+@Override
+protected void configure(HttpSecurity http) throws Exception 
+{
+    http.csrf().disable()
+        .authorizeRequests()
+        .antMatchers("/authenticate").permitAll()
+        .antMatchers("/orders/**").authenticated()
+        .anyRequest().permitAll();
+
+    http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class); // 👈 Register your filter
+}
+
 }
